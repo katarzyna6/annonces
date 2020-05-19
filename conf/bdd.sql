@@ -7,14 +7,14 @@
 # Table: user
 #------------------------------------------------------------
 
-CREATE TABLE user(
+CREATE TABLE users(
         id_user      Int  Auto_increment  NOT NULL ,
         nick         Varchar (200) NOT NULL ,
         nom          Varchar (200) NOT NULL ,
         prenom       Varchar (200) NOT NULL ,
         email        Varchar (200) NOT NULL ,
         password     Varchar (200) NOT NULL ,
-        autorisation Bool NOT NULL
+        autorisation Int NOT NULL
 	,CONSTRAINT user_PK PRIMARY KEY (id_user)
 )ENGINE=InnoDB;
 
@@ -30,5 +30,5 @@ CREATE TABLE annonce(
         id_user     Int NOT NULL
 	,CONSTRAINT annonce_PK PRIMARY KEY (id_annonce)
 
-	,CONSTRAINT annonce_user_FK FOREIGN KEY (id_user) REFERENCES user(id_user)
+	,CONSTRAINT annonce_user_FK FOREIGN KEY (id_user) REFERENCES users(id_user)
 )ENGINE=InnoDB;
